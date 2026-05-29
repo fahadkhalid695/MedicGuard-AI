@@ -1,0 +1,32 @@
+{
+  "name": "mediguard-feedback-loop",
+  "version": "1.0.0",
+  "description": "MediGuard AI Feedback & Evaluation Loop",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "job:weekly-report": "tsx src/jobs/weekly-accuracy-report.ts",
+    "job:monthly-tuning": "tsx src/jobs/monthly-threshold-tuning.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "express": "^4.21.0",
+    "pg": "^8.13.0",
+    "node-cron": "^3.0.3",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/cors": "^2.8.17",
+    "@types/uuid": "^10.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
