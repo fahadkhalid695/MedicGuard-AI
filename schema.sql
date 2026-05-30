@@ -12,9 +12,6 @@ CREATE TABLE patients (
     first_name      VARCHAR(100) NOT NULL,
     last_name       VARCHAR(100) NOT NULL,
     date_of_birth   DATE NOT NULL,
-    age             SMALLINT GENERATED ALWAYS AS (
-                        EXTRACT(YEAR FROM age(CURRENT_DATE, date_of_birth))::SMALLINT
-                    ) STORED,
     gender          VARCHAR(20),
     blood_type      VARCHAR(5),
     medical_history JSONB DEFAULT '[]',   -- past surgeries, hospitalizations, etc.
@@ -24,6 +21,9 @@ CREATE TABLE patients (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+-- Age is calculated at query time (not stored) since CURRENT_DATE is not immutable:
+-- SELECT *, EXTRACT(YEAR FROM age(CURRENT_DATE, date_of_birth))::INT AS age FROM patients;
 
 CREATE INDEX idx_patients_name ON patients (last_name, first_name);
 
