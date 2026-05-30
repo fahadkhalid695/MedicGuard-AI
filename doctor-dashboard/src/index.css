@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .vital-card {
+    @apply bg-white rounded-xl border border-gray-200 p-4 shadow-sm transition-all duration-200;
+  }
+  .vital-card:hover {
+    @apply shadow-md border-clinical-200;
+  }
+  .severity-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+}
