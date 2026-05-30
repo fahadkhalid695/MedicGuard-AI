@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { WSMessage } from "../types";
 
-const WS_URL = "ws://localhost:8765";
+// Use the same hostname as the page (works on EC2, localhost, anywhere)
+const WS_URL = `ws://${window.location.hostname}:8765`;
 
 interface UseWebSocketOptions {
   doctorId: string;
