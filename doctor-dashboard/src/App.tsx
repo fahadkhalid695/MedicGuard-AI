@@ -18,13 +18,13 @@ import type {
 // Demo doctor ID — in production this comes from auth
 const DOCTOR_ID = "dr-001";
 
-// Demo patients — in production fetched from API on load
+// Demo patients — matching the seed data in the database
 const INITIAL_PATIENTS: Patient[] = [
-  { id: "p-001", name: "Sarah Johnson", severity: "normal", heartRate: 72, spo2: 98, lastUpdate: "" },
-  { id: "p-002", name: "Michael Chen", severity: "normal", heartRate: 68, spo2: 97, lastUpdate: "" },
-  { id: "p-003", name: "Emily Rodriguez", severity: "normal", heartRate: 75, spo2: 99, lastUpdate: "" },
-  { id: "p-004", name: "James Williams", severity: "normal", heartRate: 80, spo2: 96, lastUpdate: "" },
-  { id: "p-005", name: "Maria Garcia", severity: "normal", heartRate: 70, spo2: 98, lastUpdate: "" },
+  { id: "00000000-0000-0000-0000-000000000001", name: "Sarah Johnson", severity: "normal", heartRate: 72, spo2: 98, lastUpdate: "" },
+  { id: "00000000-0000-0000-0000-000000000002", name: "Michael Chen", severity: "normal", heartRate: 68, spo2: 97, lastUpdate: "" },
+  { id: "00000000-0000-0000-0000-000000000003", name: "Emily Rodriguez", severity: "normal", heartRate: 75, spo2: 99, lastUpdate: "" },
+  { id: "00000000-0000-0000-0000-000000000004", name: "James Williams", severity: "normal", heartRate: 80, spo2: 96, lastUpdate: "" },
+  { id: "00000000-0000-0000-0000-000000000005", name: "Maria Garcia", severity: "normal", heartRate: 70, spo2: 98, lastUpdate: "" },
 ];
 
 const MAX_HISTORY = 90; // ~30 min at 1 reading per 20s

@@ -24,8 +24,19 @@ from datetime import datetime, timezone
 
 import httpx
 
-# 10 simulated patients with stable UUIDs
-PATIENTS = [uuid.uuid4() for _ in range(10)]
+# 10 simulated patients with fixed UUIDs (must exist in the patients table)
+PATIENTS = [
+    uuid.UUID("00000000-0000-0000-0000-000000000001"),
+    uuid.UUID("00000000-0000-0000-0000-000000000002"),
+    uuid.UUID("00000000-0000-0000-0000-000000000003"),
+    uuid.UUID("00000000-0000-0000-0000-000000000004"),
+    uuid.UUID("00000000-0000-0000-0000-000000000005"),
+    uuid.UUID("00000000-0000-0000-0000-000000000006"),
+    uuid.UUID("00000000-0000-0000-0000-000000000007"),
+    uuid.UUID("00000000-0000-0000-0000-000000000008"),
+    uuid.UUID("00000000-0000-0000-0000-000000000009"),
+    uuid.UUID("00000000-0000-0000-0000-000000000010"),
+]
 
 # Baseline vitals per patient (slight individual variation)
 BASELINES = {
